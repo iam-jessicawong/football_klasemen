@@ -80,30 +80,21 @@
     <div class="col">
       <div class="card bg-light mb-3 mt-3" style="--bs-bg-opacity: .03;">
         <div class="card-body">
-          <table class="table text-white">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col" colspan="3">Pertandingan</th>
-              </tr>
-            </thead>
-            <tbody>
-              <?php $no=1; foreach($pertandingan as $data): ?>
-              <tr>
-                <th scope="row">1</th>
-                <td>
-                  <?= $data['klub1']; ?>
-                  <?= $data['skor1']; ?>
-                </td>
-                <td>VS</td>
-                <td>
-                  <?= $data['klub2']; ?>
-                  <?= $data['skor2']; ?>
-                </td>
-              </tr>
-              <?php $no++; endforeach; ?>
-            </tbody>
-          </table>
+          <?php $no=1; foreach($pertandingan as $data): ?>
+              <div class="card bg-light rounded-5 fs-5 my-2" style="--bs-bg-opacity:.03;">
+                <div class="card-body d-flex justify-content-around">
+                  <div>
+                    <?= $data['klub1']; ?>
+                  </div>
+                  <div class="badge bg-primary rounded-5 fs-6">
+                      <?= $data['skor1']; ?> <span class="mx-3">vs</span> <?= $data['skor2']; ?>
+                  </div>
+                  <div>
+                    <?= $data['klub2']; ?>
+                  </div>
+                </div>
+              </div>
+          <?php $no++; endforeach; ?>
         </div>
       </div>
 

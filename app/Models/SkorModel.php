@@ -11,6 +11,6 @@ class SkorModel extends Model
 
     public function getAll()
     {
-      return $this->findAll();
+      return $this->select('pertandingan.skor1, pertandingan.skor2, k1.klub as klub1, k2.klub as klub2')->join('klub k1', 'pertandingan.klub1 = k1.id')->join('klub k2', 'pertandingan.klub2 = k2.id')->findAll();
     }
 }
